@@ -8,13 +8,12 @@ task :server do
     return
   end
 
-  # rackup -p PORT will run on the port specified (9292 by default)
+  # Replace the port number with your desired port
   ENV["PORT"] ||= "9292"
   rackup = "rackup -p #{ENV['PORT']}"
 
-  # rerun allows auto-reloading of server when files are updated
-  # -b runs in the background (include it or binding.pry won't work)
-  exec "bundle exec rerun -b '#{rackup}'"
+  # Run the server using bundle exec
+  exec "bundle exec #{rackup}"
 end
 
 desc "Start the console"

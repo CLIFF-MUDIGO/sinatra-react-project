@@ -1,5 +1,6 @@
 require_relative "./config/environment"
-
+require 'bundler/setup'
+require 'sinatra/base'
 # Allow CORS (Cross-Origin Resource Sharing) requests
 use Rack::Cors do
   allow do
